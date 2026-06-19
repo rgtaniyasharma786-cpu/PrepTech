@@ -1,0 +1,64 @@
+<!-- Single Page Header start -->
+<div class="container-fluid page-header py-5">
+  <h1 class="text-center text-white display-3">Register</h1>
+  <ol class="breadcrumb justify-content-center mb-0">
+    <li class="breadcrumb-item"><a href="#">Home</a></li>
+    <li class="breadcrumb-item active text-white">Register</li>
+  </ol>
+</div>
+<!-- Single Page Header End -->
+
+
+<!-- Contact Start -->
+<div class="container-fluid contact py-5">
+  <div class="container py-5">
+    <div class="p-5 bg-light rounded">
+      <div class="row g-4">
+        <div class="col-12">
+          <div class="text-center mx-auto" style="max-width: 700px;">
+            <h1 class="text-primary">Register to your account ........</h1>
+            <p class=" text-uppercase pt-2" style="color: black;">
+              <strong>Already have account?/</strong> <a class="text-primary" routerLink="/login">Login</a>
+            </p>
+
+          </div>
+        </div>
+
+        <div class="col-lg-6 offset-lg-3 ">
+
+          <form [formGroup]="registerForm" (ngSubmit)="onSubmit()" class="p-4 bg-light rounded">
+            <!-- Name -->
+            <div class="mb-3">
+              <input type="text" class="form-control" placeholder="Name" formControlName="name" />
+              <div *ngIf="registerForm.get('name')?.touched && registerForm.get('name')?.invalid" class="text-danger">
+                Name is required.
+              </div>
+            </div>
+
+            <!-- Email -->
+            <div class="mb-3">
+              <input type="email" class="form-control" placeholder="Email" formControlName="email" />
+              <div *ngIf="registerForm.get('email')?.touched && registerForm.get('email')?.invalid" class="text-danger">
+                A valid email is required.
+              </div>
+            </div>
+
+            <!-- Password -->
+            <div class="mb-3">
+              <input type="password" class="form-control" placeholder="Password" formControlName="password" />
+              <div *ngIf="registerForm.get('password')?.touched && registerForm.get('password')?.invalid"
+                class="text-danger">
+                Password must be at least 6 characters.
+              </div>
+            </div>
+
+            <button type="submit" class="btn btn-primary w-100">Register</button>
+          </form>
+
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Contact End -->
